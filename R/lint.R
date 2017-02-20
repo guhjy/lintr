@@ -132,6 +132,7 @@ reorder_lints <- function(lints) {
 #' relative to the package base directory.  If \code{FALSE}, use the full
 #' absolute path.
 #' @param ... additional arguments passed to \code{\link{lint}}
+#' @return A \code{"lints"} object, which is a list of \code{"lint"} objects.
 #' @export
 lint_package <- function(path = ".", relative_path = TRUE, ...) {
   path <- find_package(path)
@@ -226,9 +227,9 @@ pkg_name <- function(path = find_package()) {
 #' \item{type}{Character vector of length one.
 #' One of \code{"style"}, \code{"warning"}, or \code{"error"}.}
 #' \item{message}{Character vector of length one with a message describing the issue.}
-#' \item{line}{?}
-#' \item{ranges}{?}
-#' \item{linter}{?}
+#' \item{line}{Character vector of length one with the text of th relevant line.}
+#' \item{ranges}{A list of integer vectors each of length two, with the relevant column range of the issue.}
+#' \item{linter}{Character vector of length one with name of the linter.}
 #' }
 #'
 #'
