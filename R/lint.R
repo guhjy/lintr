@@ -216,6 +216,22 @@ pkg_name <- function(path = find_package()) {
 #' @param line code source where the lint occured
 #' @param ranges ranges on the line that should be emphasized.
 #' @param linter name of linter that created the Lint object.
+#' @return An object of class \code{"Lint"}, which is a list with the
+#' following elements:
+#' \describe{
+#' \item{filename}{The name of the file}
+#' \item{line_number}{integer. Relevant line number in the file.}
+#' \item{column_number}{integer. Relevant column number in the file.}
+#' \item{type}{Character vector of length one.
+#' One of \code{"style"}, \code{"warning"}, or \code{"error"}.}
+#' \item{message}{Character vector of length one with a message describing the issue.}
+#' \item{line}{?}
+#' \item{ranges}{?}
+#' \item{linter}{?}
+#' }
+#'
+#'
+#'
 #' @export
 Lint <- function(filename, line_number = 1L, column_number = NULL,
   type = c("style", "warning", "error"),
