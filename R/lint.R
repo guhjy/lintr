@@ -19,6 +19,7 @@ NULL
 #' uses that file as the cache.
 #' @param ... additional arguments passed to \code{\link{exclude}}.
 #' @param parse_settings whether to try and parse the settings
+#' @return A \code{"lints"} object, which is a list of \code{"lint"} objects.
 #' @export
 #' @name lint_file
 lint <- function(filename, linters = NULL, cache = FALSE, ..., parse_settings = TRUE) {
